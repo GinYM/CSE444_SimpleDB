@@ -22,8 +22,24 @@ public class Catalog {
      * Constructor.
      * Creates a new, empty catalog.
      */
+    private Map<Integer, Data> log;
+    private Map<String, Integer> name2id;
+
     public Catalog() {
         // some code goes here
+        log = new HashMap<>();
+        name2id = new HashMap<>();
+    }
+
+    class Data{
+        public DbFile file;
+        public String name;
+        public String pkeyField;
+        public Data(DbFile file, String name, String pkeyField){
+            this.file = file;
+            this.name = name;
+            this.pkeyField = pkeyField;
+        }
     }
 
     /**
@@ -37,6 +53,9 @@ public class Catalog {
      */
     public void addTable(DbFile file, String name, String pkeyField) {
         // some code goes here
+        log.put(file.getId(), new Data(file, name, pkeyField));
+        name2id.put(name, file.getId());
+
     }
 
     public void addTable(DbFile file, String name) {
@@ -60,7 +79,8 @@ public class Catalog {
      */
     public int getTableId(String name) throws NoSuchElementException {
         // some code goes here
-        return 0;
+        if(name2id.containsKey(name)) return name2id.get(name);
+        throw new NoSuchElementException();
     }
 
     /**
@@ -71,7 +91,8 @@ public class Catalog {
      */
     public TupleDesc getTupleDesc(int tableid) throws NoSuchElementException {
         // some code goes here
-        return null;
+        if(log.containsKey(tableid)) return log.get(tableid).file.getTupleDesc();
+        throw new NoSuchElementException();
     }
 
     /**
@@ -82,27 +103,29 @@ public class Catalog {
      */
     public DbFile getDatabaseFile(int tableid) throws NoSuchElementException {
         // some code goes here
-        return null;
+        return log.get(tableid).file;
     }
 
     public String getPrimaryKey(int tableid) {
         // some code goes here
-        return null;
+        return log.get(tableid).pkeyField;
     }
 
     public Iterator<Integer> tableIdIterator() {
         // some code goes here
-        return null;
+        return log.keySet().iterator();
     }
 
     public String getTableName(int id) {
         // some code goes here
-        return null;
+        return log.get(id).name;
     }
     
     /** Delete all tables from the catalog */
     public void clear() {
         // some code goes here
+        log.clear();
+        name2id.clear();
     }
     
     /**
