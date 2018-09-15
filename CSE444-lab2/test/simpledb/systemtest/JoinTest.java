@@ -19,12 +19,17 @@ public class JoinTest extends SimpleDbTestBase {
         ArrayList<ArrayList<Integer>> t1Tuples = new ArrayList<ArrayList<Integer>>();
         HeapFile table1 = SystemTestUtil.createRandomHeapFile(
                 COLUMNS, table1Rows, columnSpecification, t1Tuples);
+        //System.out.println("tabke1: "+table1.getId());
         assert t1Tuples.size() == table1Rows;
 
         columnSpecification.put(0, table2ColumnValue);
         ArrayList<ArrayList<Integer>> t2Tuples = new ArrayList<ArrayList<Integer>>();
         HeapFile table2 = SystemTestUtil.createRandomHeapFile(
                 COLUMNS, table2Rows, columnSpecification, t2Tuples);
+
+
+
+        //System.out.println("table2: "+table2.getId());
         assert t2Tuples.size() == table2Rows;
 
         // Generate the expected results
@@ -46,6 +51,8 @@ public class JoinTest extends SimpleDbTestBase {
         SeqScan ss2 = new SeqScan(tid, table2.getId(), "");
         JoinPredicate p = new JoinPredicate(0, Predicate.Op.EQUALS, 0);
         Join joinOp = new Join(p, ss1, ss2);
+
+        //System.out.println("table1: "+ table1.getId()+" table2 "+table2.getId());
 
         // test the join results
         SystemTestUtil.matchTuples(joinOp, expectedResults);

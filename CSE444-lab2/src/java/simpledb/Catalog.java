@@ -54,6 +54,7 @@ public class Catalog {
     public void addTable(DbFile file, String name, String pkeyField) {
         // some code goes here
         log.put(file.getId(), new Data(file, name, pkeyField));
+        //System.out.println(file.getId());
         name2id.put(name, file.getId());
 
     }
@@ -103,6 +104,8 @@ public class Catalog {
      */
     public DbFile getDatabaseFile(int tableid) throws NoSuchElementException {
         // some code goes here
+        //System.out.println(tableid);
+        //if(log.containsKey(tableid)) System.out.println("Yes! contain");
         return log.get(tableid).file;
     }
 

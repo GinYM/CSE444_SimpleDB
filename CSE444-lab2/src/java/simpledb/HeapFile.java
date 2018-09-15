@@ -25,13 +25,13 @@ public class HeapFile implements DbFile {
      */
     private File f;
     private TupleDesc td;
-    private static Map<Integer, Integer> file2id; //file to uid
+    private static Map<Integer, Integer> file2id = new HashMap<>(); //file to uid
     private static int uid=0;
     public HeapFile(File f, TupleDesc td) {
         // some code goes here
         this.f = f;
         this.td = td;
-        file2id = new HashMap<>();
+        //file2id = new HashMap<>();
 
         if(file2id.containsKey(f.getAbsoluteFile().hashCode()) ==false){
             file2id.put(f.getAbsoluteFile().hashCode(), uid++);
@@ -57,9 +57,12 @@ public class HeapFile implements DbFile {
      * 
      * @return an ID uniquely identifying this HeapFile.
      */
+
+
     public int getId() {
         // some code goes here
         //System.out.println(f.getAbsoluteFile());
+
         return file2id.get(f.getAbsoluteFile().hashCode());
     }
 

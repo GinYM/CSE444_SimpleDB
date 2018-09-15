@@ -133,6 +133,7 @@ public class Utility {
         // create the HeapFile and add it to the catalog
     	TupleDesc td = getTupleDesc(cols);
         HeapFile hf = new HeapFile(f, td);
+        //System.out.println(hf.getId());
         Database.getCatalog().addTable(hf, UUID.randomUUID().toString());
         return hf;
     }
