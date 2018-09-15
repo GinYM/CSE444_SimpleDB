@@ -78,12 +78,12 @@ public class HeapFile implements DbFile {
         // some code goes here
         Page pg = null;
         try{
-            InputStream is = new FileInputStream(f);
+            RandomAccessFile raf = new RandomAccessFile(f,"r");
             int pgSize = BufferPool.getPageSize();
-            byte[] bytes = new byte[(int)pgSize];
             int offset = pid.pageNumber()*pgSize;
-            //System.out.println(pid.pageNumber());
-            is.read(bytes, offset, pgSize);
+            raf.seek(offset);
+            byte[] bytes = new byte[(int)pgSize];
+            raf.read(bytes);
             HeapPageId pgId = new HeapPageId(pid.getTableId(),pid.pageNumber());
             pg = new HeapPage(pgId,bytes);
             //System.out.println(((HeapPage) pg).getNumEmptySlots());
@@ -145,6 +145,7 @@ public class HeapFile implements DbFile {
             maxPgNum = numPages();
             isClosed = true;
             iter = null;
+            //System.out.println("Here in HeapFile");
             //curPg = Database.getBufferPool().getPage(tid,
             //        new HeapPageId(tableId, pgNumber), Permissions.READ_ONLY);
             //System.out.println(maxPgNum);
@@ -163,6 +164,7 @@ public class HeapFile implements DbFile {
             if(isClosed) return false;
             while( (iter == null || iter.hasNext()==false) && pgNumber<maxPgNum-1){
                 pgNumber++;
+                //System.out.println(pgNumber+" "+maxPgNum);
                 open();
             }
             if(iter == null) return false;
