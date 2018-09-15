@@ -1,5 +1,10 @@
 package simpledb;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 /**
  * Knows how to compute some aggregate over a set of StringFields.
  */
@@ -16,8 +21,19 @@ public class StringAggregator implements Aggregator {
      * @throws IllegalArgumentException if what != COUNT
      */
 
+    private int gbfield;
+    private Type gbfieldtype;
+    private int afield;
+    private Op what;
+    private Map<Field, List<Tuple>> map;
+
     public StringAggregator(int gbfield, Type gbfieldtype, int afield, Op what) {
         // some code goes here
+        this.gbfield = gbfield;
+        this.gbfieldtype = gbfieldtype;
+        this.afield = afield;
+        this.what = what;
+        map = new HashMap<>();
     }
 
     /**
@@ -26,6 +42,11 @@ public class StringAggregator implements Aggregator {
      */
     public void mergeTupleIntoGroup(Tuple tup) {
         // some code goes here
+        Field fd = tup.getField(gbfield);
+        if(map.containsKey(fd) == false){
+            map.put(fd, new ArrayList<>());
+        }
+        map.get(fd).add(tup);
     }
 
     /**
@@ -38,7 +59,7 @@ public class StringAggregator implements Aggregator {
      */
     public DbIterator iterator() {
         // some code goes here
-        throw new UnsupportedOperationException("please implement me for lab2");
+        return new AggregatorIterator(what,map,gbfield,gbfieldtype,afield,Type.STRING_TYPE);
     }
 
 }
