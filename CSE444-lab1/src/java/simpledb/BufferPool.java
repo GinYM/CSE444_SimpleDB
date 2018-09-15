@@ -1,6 +1,7 @@
 package simpledb;
 
 import java.io.*;
+import java.util.*;
 
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -20,11 +21,15 @@ public class BufferPool {
     public static final int PAGE_SIZE = 4096;
     private int numPages;
     private static int pageSize = PAGE_SIZE;
+
     
     /** Default number of pages passed to the constructor. This is used by
     other classes. BufferPool should use the numPages argument to the
     constructor instead. */
     public static final int DEFAULT_PAGES = 50;
+
+    private Map<PageId, Page> pools;
+
 
     /**
      * Creates a BufferPool that caches up to numPages pages.
@@ -34,6 +39,7 @@ public class BufferPool {
     public BufferPool(int numPages) {
         // some code goes here
         this.numPages = numPages;
+        pools = new HashMap<>();
     }
     
     public static int getPageSize() {
@@ -64,7 +70,16 @@ public class BufferPool {
         throws TransactionAbortedException, DbException {
         // some code goes here
         //Page page = DbFile.readPage(pid);
-        return null;
+        //System.out.println("Gere");
+        if(pools.containsKey(pid)) return pools.get(pid);
+
+
+
+        if(pools.size()>=numPages) throw new DbException("No enough space");
+        DbFile dbFile = Database.getCatalog().getDatabaseFile(pid.getTableId());
+        Page pg = dbFile.readPage(pid);
+        pools.put(pid, pg);
+        return pg;
     }
 
     /**

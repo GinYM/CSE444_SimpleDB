@@ -2,6 +2,7 @@ package simpledb;
 
 import java.io.*;
 import java.util.*;
+import java.io.FileInputStream;
 
 /**
  * HeapFile is an implementation of a DbFile that stores a collection of tuples
@@ -22,8 +23,19 @@ public class HeapFile implements DbFile {
      *            the file that stores the on-disk backing store for this heap
      *            file.
      */
+    private File f;
+    private TupleDesc td;
+    private static Map<Integer, Integer> file2id; //file to uid
+    private static int uid=0;
     public HeapFile(File f, TupleDesc td) {
         // some code goes here
+        this.f = f;
+        this.td = td;
+        file2id = new HashMap<>();
+
+        if(file2id.containsKey(f.getAbsoluteFile().hashCode()) ==false){
+            file2id.put(f.getAbsoluteFile().hashCode(), uid++);
+        }
     }
 
     /**
@@ -33,7 +45,7 @@ public class HeapFile implements DbFile {
      */
     public File getFile() {
         // some code goes here
-        return null;
+        return f;
     }
 
     /**
@@ -47,7 +59,8 @@ public class HeapFile implements DbFile {
      */
     public int getId() {
         // some code goes here
-        throw new UnsupportedOperationException("implement this");
+        //System.out.println(f.getAbsoluteFile());
+        return file2id.get(f.getAbsoluteFile().hashCode());
     }
 
     /**
@@ -57,13 +70,32 @@ public class HeapFile implements DbFile {
      */
     public TupleDesc getTupleDesc() {
         // some code goes here
-        throw new UnsupportedOperationException("implement this");
+        return td;
     }
 
     // see DbFile.java for javadocs
     public Page readPage(PageId pid) {
         // some code goes here
-        return null;
+        Page pg = null;
+        try{
+            InputStream is = new FileInputStream(f);
+            int pgSize = BufferPool.getPageSize();
+            byte[] bytes = new byte[(int)pgSize];
+            int offset = pid.pageNumber()*pgSize;
+            //System.out.println(pid.pageNumber());
+            is.read(bytes, offset, pgSize);
+            HeapPageId pgId = new HeapPageId(pid.getTableId(),pid.pageNumber());
+            pg = new HeapPage(pgId,bytes);
+            //System.out.println(((HeapPage) pg).getNumEmptySlots());
+
+        }catch(IOException e){
+
+            e.printStackTrace();
+        }
+
+
+
+        return pg;
     }
 
     // see DbFile.java for javadocs
@@ -77,7 +109,8 @@ public class HeapFile implements DbFile {
      */
     public int numPages() {
         // some code goes here
-        return 0;
+        int len = (int)f.length();
+        return (int)Math.ceil(1.0*len/BufferPool.getPageSize());
     }
 
     // see DbFile.java for javadocs
@@ -96,10 +129,64 @@ public class HeapFile implements DbFile {
         // not necessary for lab1
     }
 
+    class myIter implements DbFileIterator{
+        public int pid;
+        public TransactionId tid;
+        public int tableId;
+        public int pgNumber;
+        public int maxPgNum;
+        public Page curPg;
+        public Iterator<Tuple> iter;
+        public boolean isClosed;
+        public myIter(TransactionId tid, int tableId){
+            this.tid = tid;
+            this.tableId= tableId;
+            this.pgNumber = 0;
+            maxPgNum = numPages();
+            isClosed = true;
+            iter = null;
+            //curPg = Database.getBufferPool().getPage(tid,
+            //        new HeapPageId(tableId, pgNumber), Permissions.READ_ONLY);
+            //System.out.println(maxPgNum);
+
+
+        }
+        public void open()throws TransactionAbortedException, DbException{
+            isClosed = false;
+            curPg = Database.getBufferPool().getPage(tid,
+                    new HeapPageId(tableId, pgNumber), Permissions.READ_ONLY);
+
+            iter = curPg.iterator();
+        }
+        public boolean hasNext() throws TransactionAbortedException, DbException{
+
+            if(isClosed) return false;
+            while( (iter == null || iter.hasNext()==false) && pgNumber<maxPgNum-1){
+                pgNumber++;
+                open();
+            }
+            if(iter == null) return false;
+            return iter.hasNext();
+        }
+        public Tuple next()
+                throws DbException, TransactionAbortedException, NoSuchElementException{
+            if(isClosed) throw new NoSuchElementException();
+            return iter.next();
+        }
+        public void rewind() throws DbException, TransactionAbortedException{
+            if(isClosed) throw new DbException("Closed!");
+            pgNumber = 0;
+            open();
+        }
+        public void close(){
+            isClosed = true;
+        }
+    }
+
     // see DbFile.java for javadocs
     public DbFileIterator iterator(TransactionId tid) {
         // some code goes here
-        return null;
+        return new myIter(tid, getId());
     }
 
 }

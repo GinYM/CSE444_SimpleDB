@@ -44,6 +44,8 @@ public class HeapFileReadTest extends SimpleDbTestBase {
         assertEquals(id, hf.getId());
 
         HeapFile other = SystemTestUtil.createRandomHeapFile(1, 1, null, null);
+        //System.out.println(hf.getFile().getAbsoluteFile());
+        //System.out.println(other.getFile().getAbsoluteFile());
         assertTrue(id != other.getId());
     }
 
