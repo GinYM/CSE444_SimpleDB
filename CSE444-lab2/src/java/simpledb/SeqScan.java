@@ -125,6 +125,7 @@ public class SeqScan implements DbIterator {
     public void rewind() throws DbException, NoSuchElementException,
             TransactionAbortedException {
         // some code goes here
+
         iter.rewind();
 
     }
