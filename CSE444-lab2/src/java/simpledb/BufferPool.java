@@ -73,9 +73,9 @@ public class BufferPool {
         //System.out.println("Gere");
         if(pools.containsKey(pid)) return pools.get(pid);
 
-
-
         if(pools.size()>=numPages) throw new DbException("No enough space");
+
+        //System.out.println(pid.getTableId());
         DbFile dbFile = Database.getCatalog().getDatabaseFile(pid.getTableId());
         Page pg = dbFile.readPage(pid);
         pools.put(pid, pg);
@@ -144,6 +144,12 @@ public class BufferPool {
         throws DbException, IOException, TransactionAbortedException {
         // some code goes here
         // not necessary for lab1
+        DbFile df = Database.getCatalog().getDatabaseFile(tableId);
+        ArrayList<Page> ret =  df.insertTuple(tid, t);
+        for(Page pg : ret){
+            pg.markDirty(true, tid);
+            pools.put(pg.getId(), pg);
+        }
     }
 
     /**
@@ -162,6 +168,13 @@ public class BufferPool {
         throws DbException, IOException, TransactionAbortedException {
         // some code goes here
         // not necessary for lab1
+
+        DbFile df = Database.getCatalog().getDatabaseFile(t.getRecordId().getPageId().getTableId());
+        ArrayList<Page> ret =  df.insertTuple(tid, t);
+        for(Page pg : ret){
+            pg.markDirty(true, tid);
+            pools.put(pg.getId(),pg);
+        }
     }
 
     /**

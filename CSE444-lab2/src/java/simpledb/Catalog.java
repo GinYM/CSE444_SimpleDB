@@ -52,6 +52,7 @@ public class Catalog {
      * @param pkeyField the name of the primary key field
      */
     public void addTable(DbFile file, String name, String pkeyField) {
+        //System.out.println("Add table "+file.getId());
         // some code goes here
         log.put(file.getId(), new Data(file, name, pkeyField));
         //System.out.println(file.getId());
@@ -71,6 +72,7 @@ public class Catalog {
      *    this file/tupledesc param for the calls getTupleDesc and getFile
      */
     public void addTable(DbFile file) {
+        //System.out.println("Add file "+file.getId());
         addTable(file, (UUID.randomUUID()).toString());
     }
 
@@ -106,6 +108,8 @@ public class Catalog {
         // some code goes here
         //System.out.println(tableid);
         //if(log.containsKey(tableid)) System.out.println("Yes! contain");
+        //System.out.println(log.get(0));
+
         return log.get(tableid).file;
     }
 

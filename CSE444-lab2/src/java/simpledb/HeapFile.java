@@ -105,6 +105,10 @@ public class HeapFile implements DbFile {
     public void writePage(Page page) throws IOException {
         // some code goes here
         // not necessary for lab1
+        RandomAccessFile raf = new RandomAccessFile(f, "rw");
+        raf.seek(page.getId().pageNumber()*BufferPool.getPageSize());
+        raf.write(page.getPageData(),0,page.getPageData().length);
+
     }
 
     /**
@@ -120,7 +124,38 @@ public class HeapFile implements DbFile {
     public ArrayList<Page> insertTuple(TransactionId tid, Tuple t)
             throws DbException, IOException, TransactionAbortedException {
         // some code goes here
-        return null;
+        HeapPage page;
+        ArrayList<Page> result = new ArrayList<>();
+
+        if(numPages() == 0) System.out.println("Yes!");
+
+        for(int i = 0;i<numPages();i++){
+            page = (HeapPage) Database.getBufferPool().getPage(tid, new HeapPageId(getId(), i), Permissions.READ_ONLY);
+            if(page.getNumEmptySlots() > 0){
+                //System.out.println("Here");
+                //System.out.println(i+ " "+page.getNumEmptySlots());
+                page.insertTuple(t);
+                result.add(page);
+                writePage(page);
+                break;
+            }
+        }
+
+        if(result.size() == 0){
+            //System.out.println(numPages());
+            byte[]data = HeapPage.createEmptyPageData();
+            page = new HeapPage(new HeapPageId(getId(), numPages()),data);
+            t.setRecordId(new RecordId(new HeapPageId(getId(), numPages()),0));
+            page.insertTuple(t);
+            writePage(page);
+            //System.out.println(page.getNumEmptySlots()+" "+numPages());
+            result.add(page);
+        }
+
+
+
+
+        return result;
         // not necessary for lab1
     }
 
@@ -128,8 +163,24 @@ public class HeapFile implements DbFile {
     public ArrayList<Page> deleteTuple(TransactionId tid, Tuple t) throws DbException,
             TransactionAbortedException {
         // some code goes here
-        return null;
+        //return null;
         // not necessary for lab1
+        HeapPage page = null;
+        ArrayList<Page> ret = new ArrayList<>();
+        for(int i = 0;i<numPages();i++){
+            page = (HeapPage) Database.getBufferPool().getPage(tid, new HeapPageId(getId(),i), Permissions.READ_ONLY);
+            try{
+                page.deleteTuple(t);
+                ret.add(page);
+            }catch(DbException e){
+
+            }
+
+        }
+        if(ret.size() == 0){
+            throw new DbException("Not in file");
+        }
+        return ret;
     }
 
     class myIter implements DbFileIterator{
