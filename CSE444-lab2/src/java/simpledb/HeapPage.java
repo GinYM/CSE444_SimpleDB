@@ -249,8 +249,10 @@ public class HeapPage implements Page {
     public void deleteTuple(Tuple t) throws DbException {
         // some code goes here
         // not necessary for lab1
+        //System.out.println(t);
         int idx = 0;
         for(idx=0;idx<getNumTuples();idx++){
+            if(isSlotUsed(idx) == false) continue;
             if(tuples[idx].equals(t)){
                 break;
             }
@@ -258,6 +260,7 @@ public class HeapPage implements Page {
         if(idx >= getNumTuples() || isSlotUsed(idx) == false){
             throw new DbException("No such tuple or slot is already empty");
         }else{
+            //System.out.println("Mark "+ idx);
             markSlotUsed(idx, false);
         }
     }

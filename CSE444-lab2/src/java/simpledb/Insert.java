@@ -1,5 +1,7 @@
 package simpledb;
 
+import java.io.IOException;
+
 /**
  * Inserts tuples read from the child operator into the tableid specified in the
  * constructor
@@ -21,26 +23,42 @@ public class Insert extends Operator {
      *             if TupleDesc of child differs from table into which we are to
      *             insert.
      */
+    private TransactionId tid;
+    private DbIterator child;
+    private int tableid;
+    private DbIterator[] children;
+    private boolean firstTime;
     public Insert(TransactionId t,DbIterator child, int tableid)
             throws DbException {
         // some code goes here
+        this.tid = t;
+        this.child = child;
+        this.tableid = tableid;
+        children = null;
+        firstTime = true;
     }
 
     public TupleDesc getTupleDesc() {
         // some code goes here
-        return null;
+        TupleDesc td = new TupleDesc(new Type[]{Type.INT_TYPE}, new String[]{"Count"});
+        return td;
     }
 
     public void open() throws DbException, TransactionAbortedException {
         // some code goes here
+        super.open();
+        child.open();
     }
 
     public void close() {
         // some code goes here
+        super.close();
+        child.close();
     }
 
     public void rewind() throws DbException, TransactionAbortedException {
         // some code goes here
+        child.rewind();
     }
 
     /**
@@ -58,17 +76,34 @@ public class Insert extends Operator {
      */
     protected Tuple fetchNext() throws TransactionAbortedException, DbException {
         // some code goes here
-        return null;
+        if(firstTime == false) return null;
+        firstTime = false;
+        int count = 0;
+        while(child.hasNext()){
+            Tuple tp = child.next();
+            try{
+                Database.getBufferPool().insertTuple(tid, tableid,tp);
+                count++;
+            }catch(IOException e){
+
+            }
+
+        }
+        TupleDesc td = getTupleDesc();
+        Tuple ret = new Tuple(td);
+        ret.setField(0,new IntField(count));
+        return ret;
     }
 
     @Override
     public DbIterator[] getChildren() {
         // some code goes here
-        return null;
+        return children;
     }
 
     @Override
     public void setChildren(DbIterator[] children) {
         // some code goes here
+        this.children = children;
     }
 }

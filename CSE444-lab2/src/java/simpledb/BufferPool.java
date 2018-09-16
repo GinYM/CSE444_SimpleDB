@@ -170,7 +170,7 @@ public class BufferPool {
         // not necessary for lab1
 
         DbFile df = Database.getCatalog().getDatabaseFile(t.getRecordId().getPageId().getTableId());
-        ArrayList<Page> ret =  df.insertTuple(tid, t);
+        ArrayList<Page> ret = df.deleteTuple(tid,t);
         for(Page pg : ret){
             pg.markDirty(true, tid);
             pools.put(pg.getId(),pg);

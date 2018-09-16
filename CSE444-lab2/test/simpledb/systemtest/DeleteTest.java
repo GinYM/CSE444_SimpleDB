@@ -21,6 +21,7 @@ public class DeleteTest extends FilterBase {
         deleteOperator.open();
         boolean hasResult = false;
         int result = -1;
+        //if(deleteOperator.hasNext() == false) System.out.println("no!!!");
         while (deleteOperator.hasNext()) {
             Tuple t = deleteOperator.next();
             assertFalse(hasResult);
