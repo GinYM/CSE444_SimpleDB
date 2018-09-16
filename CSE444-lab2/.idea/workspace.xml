@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bf339dcf-2972-47da-849f-06c28a7671f0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/out/production/CSE444-lab2/simpledb/IntegerAggregator$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CSE444-lab2/simpledb/IntegerAggregator$MyIter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CSE444-lab2/simpledb/StringAggregator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/java/simpledb/IntegerAggregator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java/simpledb/IntegerAggregator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/java/simpledb/StringAggregator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java/simpledb/StringAggregator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE444-lab2/simpledb/Aggregate.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSE444-lab2/simpledb/Aggregate.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE444-lab2/simpledb/AggregatorIterator$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSE444-lab2/simpledb/AggregatorIterator$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE444-lab2/simpledb/AggregatorIterator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSE444-lab2/simpledb/AggregatorIterator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/java/simpledb/Aggregate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java/simpledb/Aggregate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/java/simpledb/AggregatorIterator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java/simpledb/AggregatorIterator.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,22 +28,22 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="51" />
+          <entry key="java" value="65" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="51" />
+          <entry key="JAVA" value="65" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="6828" />
+          <entry key="java" value="9041" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="6828" />
+          <entry key="JAVA" value="9041" />
         </counts>
       </usages-collector>
     </session>
@@ -50,34 +51,59 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/simpledb/AggregateTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="109">
+              <caret line="88" column="28" lean-forward="true" selection-start-line="88" selection-start-column="28" selection-end-line="88" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/simpledb/TestUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="63">
-              <caret line="130" column="11" selection-start-line="130" selection-start-column="11" selection-end-line="130" selection-end-column="11" />
+            <state relative-caret-position="182">
+              <caret line="137" column="23" lean-forward="true" selection-start-line="137" selection-start-column="23" selection-end-line="137" selection-end-column="23" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/java/simpledb/AggregatorIterator.java">
+        <entry file="file://$PROJECT_DIR$/src/java/simpledb/Aggregate.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="108" column="47" selection-start-line="108" selection-start-column="47" selection-end-line="108" selection-end-column="47" />
+            <state relative-caret-position="378">
+              <caret line="190" column="20" selection-start-line="190" selection-start-column="20" selection-end-line="190" selection-end-column="20" />
               <folding>
-                <element signature="e#4357#4358#0" expanded="true" />
-                <element signature="e#4384#4385#0" expanded="true" />
-                <element signature="e#4410#4411#0" expanded="true" />
-                <element signature="e#4440#4441#0" expanded="true" />
+                <element signature="e#2717#2718#0" expanded="true" />
+                <element signature="e#2751#2752#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/java/simpledb/StringAggregator.java">
+        <entry file="file://$PROJECT_DIR$/src/java/simpledb/AggregatorIterator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="840">
-              <caret line="35" column="30" selection-start-line="35" selection-start-column="30" selection-end-line="35" selection-end-column="30" />
+            <state relative-caret-position="328">
+              <caret line="131" column="10" selection-start-line="131" selection-start-column="10" selection-end-line="131" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/java/simpledb/IntegerAggregator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1176">
+              <caret line="49" column="43" lean-forward="true" selection-start-line="49" selection-start-column="43" selection-end-line="49" selection-end-column="43" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/java/simpledb/AggregatorIteratorNoGroup.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="311">
+              <caret line="56" column="10" selection-start-line="56" selection-start-column="10" selection-end-line="56" selection-end-column="10" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -86,46 +112,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/simpledb/StringAggregatorTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-92">
-              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/java/simpledb/StringField.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="298">
-              <caret line="83" column="23" selection-start-line="83" selection-start-column="23" selection-end-line="83" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/java/simpledb/Type.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/java/simpledb/TupleDesc.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="29">
-              <caret line="10" column="7" lean-forward="true" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/java/simpledb/Field.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="130">
-              <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+            <state relative-caret-position="-1171">
+              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -133,7 +123,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/java/simpledb/Aggregator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="151">
+            <state relative-caret-position="-1215">
               <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
             </state>
           </provider>
@@ -151,6 +141,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>In for loop</find>
+      <find>Int Type</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -169,10 +160,14 @@
         <option value="$PROJECT_DIR$/src/java/simpledb/HeapFile.java" />
         <option value="$PROJECT_DIR$/test/simpledb/systemtest/JoinTest.java" />
         <option value="$PROJECT_DIR$/src/java/simpledb/Utility.java" />
-        <option value="$PROJECT_DIR$/test/simpledb/TestUtil.java" />
         <option value="$PROJECT_DIR$/src/java/simpledb/IntegerAggregator.java" />
         <option value="$PROJECT_DIR$/src/java/simpledb/StringAggregator.java" />
+        <option value="$PROJECT_DIR$/src/java/simpledb/TupleDesc.java" />
+        <option value="$PROJECT_DIR$/src/java/simpledb/NoGroupAggregator.java" />
+        <option value="$PROJECT_DIR$/test/simpledb/TestUtil.java" />
         <option value="$PROJECT_DIR$/src/java/simpledb/AggregatorIterator.java" />
+        <option value="$PROJECT_DIR$/src/java/simpledb/AggregatorIteratorNoGroup.java" />
+        <option value="$PROJECT_DIR$/src/java/simpledb/Aggregate.java" />
       </list>
     </option>
   </component>
@@ -237,10 +232,15 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="DbIterator&#9;PSI&#9;JAVA://simpledb.DbIterator" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1537052041737" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1537059880695" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="simpledb" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -254,7 +254,53 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.IntegerAggregatorTest">
+  <component name="RunManager" selected="JUnit.AggregateTest">
+    <configuration name="AggregateTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CSE444-lab21" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="simpledb.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="simpledb" />
+      <option name="MAIN_CLASS_NAME" value="simpledb.AggregateTest" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AggregateTest.getTupleDesc" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CSE444-lab21" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="simpledb.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="simpledb" />
+      <option name="MAIN_CLASS_NAME" value="simpledb.AggregateTest" />
+      <option name="METHOD_NAME" value="getTupleDesc" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AggregateTest.rewind" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CSE444-lab21" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="simpledb.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="simpledb" />
+      <option name="MAIN_CLASS_NAME" value="simpledb.AggregateTest" />
+      <option name="METHOD_NAME" value="rewind" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="IntegerAggregatorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CSE444-lab21" />
       <extension name="coverage">
@@ -265,36 +311,6 @@
       </extension>
       <option name="PACKAGE_NAME" value="simpledb" />
       <option name="MAIN_CLASS_NAME" value="simpledb.IntegerAggregatorTest" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="IntegerAggregatorTest.mergeSum" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CSE444-lab21" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="simpledb.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="simpledb" />
-      <option name="MAIN_CLASS_NAME" value="simpledb.IntegerAggregatorTest" />
-      <option name="METHOD_NAME" value="mergeSum" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="JoinTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CSE444-lab21" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="simpledb.systemtest.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="simpledb.systemtest" />
-      <option name="MAIN_CLASS_NAME" value="simpledb.systemtest.JoinTest" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -313,36 +329,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StringAggregatorTest.mergeCount" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CSE444-lab21" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="simpledb.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="simpledb" />
-      <option name="MAIN_CLASS_NAME" value="simpledb.StringAggregatorTest" />
-      <option name="METHOD_NAME" value="mergeCount" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
-      <item itemvalue="JUnit.JoinTest (1)" />
       <item itemvalue="JUnit.IntegerAggregatorTest" />
-      <item itemvalue="JUnit.IntegerAggregatorTest.mergeSum" />
       <item itemvalue="JUnit.StringAggregatorTest" />
-      <item itemvalue="JUnit.StringAggregatorTest.mergeCount" />
+      <item itemvalue="JUnit.AggregateTest" />
+      <item itemvalue="JUnit.AggregateTest.rewind" />
+      <item itemvalue="JUnit.AggregateTest.getTupleDesc" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.AggregateTest" />
+        <item itemvalue="JUnit.AggregateTest.getTupleDesc" />
+        <item itemvalue="JUnit.AggregateTest.rewind" />
         <item itemvalue="JUnit.IntegerAggregatorTest" />
         <item itemvalue="JUnit.StringAggregatorTest" />
-        <item itemvalue="JUnit.StringAggregatorTest.mergeCount" />
-        <item itemvalue="JUnit.IntegerAggregatorTest.mergeSum" />
-        <item itemvalue="JUnit.JoinTest (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -360,42 +360,42 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="IntegerAggregatorTest_mergeSum - 2018.09.15 at 15h 16m 23s.xml">
-      <configuration name="IntegerAggregatorTest.mergeSum" configurationId="JUnit" />
+    <history-entry file="AggregateTest_rewind - 2018.09.15 at 17h 36m 03s.xml">
+      <configuration name="AggregateTest.rewind" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="IntegerAggregatorTest_mergeSum - 2018.09.15 at 15h 17m 28s.xml">
-      <configuration name="IntegerAggregatorTest.mergeSum" configurationId="JUnit" />
+    <history-entry file="AggregateTest_rewind - 2018.09.15 at 17h 36m 34s.xml">
+      <configuration name="AggregateTest.rewind" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="IntegerAggregatorTest_mergeSum - 2018.09.15 at 15h 17m 49s.xml">
-      <configuration name="IntegerAggregatorTest.mergeSum" configurationId="JUnit" />
+    <history-entry file="AggregateTest_rewind - 2018.09.15 at 17h 37m 15s.xml">
+      <configuration name="AggregateTest.rewind" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="IntegerAggregatorTest_mergeSum - 2018.09.15 at 15h 18m 48s.xml">
-      <configuration name="IntegerAggregatorTest.mergeSum" configurationId="JUnit" />
+    <history-entry file="AggregateTest_rewind - 2018.09.15 at 17h 38m 28s.xml">
+      <configuration name="AggregateTest.rewind" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="IntegerAggregatorTest_mergeSum - 2018.09.15 at 15h 19m 01s.xml">
-      <configuration name="IntegerAggregatorTest.mergeSum" configurationId="JUnit" />
+    <history-entry file="AggregateTest_rewind - 2018.09.15 at 17h 42m 39s.xml">
+      <configuration name="AggregateTest.rewind" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="IntegerAggregatorTest - 2018.09.15 at 15h 19m 09s.xml">
-      <configuration name="IntegerAggregatorTest" configurationId="JUnit" />
+    <history-entry file="AggregateTest - 2018.09.15 at 17h 42m 45s.xml">
+      <configuration name="AggregateTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="IntegerAggregatorTest - 2018.09.15 at 15h 39m 02s.xml">
-      <configuration name="IntegerAggregatorTest" configurationId="JUnit" />
+    <history-entry file="AggregateTest - 2018.09.15 at 17h 43m 08s.xml">
+      <configuration name="AggregateTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="IntegerAggregatorTest - 2018.09.15 at 15h 39m 25s.xml">
-      <configuration name="IntegerAggregatorTest" configurationId="JUnit" />
+    <history-entry file="AggregateTest_getTupleDesc - 2018.09.15 at 17h 57m 27s.xml">
+      <configuration name="AggregateTest.getTupleDesc" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="StringAggregatorTest - 2018.09.15 at 15h 41m 00s.xml">
-      <configuration name="StringAggregatorTest" configurationId="JUnit" />
+    <history-entry file="AggregateTest_getTupleDesc - 2018.09.15 at 17h 58m 10s.xml">
+      <configuration name="AggregateTest.getTupleDesc" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="StringAggregatorTest - 2018.09.15 at 15h 41m 24s.xml">
-      <configuration name="StringAggregatorTest" configurationId="JUnit" />
+    <history-entry file="AggregateTest_getTupleDesc - 2018.09.15 at 17h 58m 51s.xml">
+      <configuration name="AggregateTest.getTupleDesc" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22246066" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22246066" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -404,7 +404,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.28433734" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.28433734" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -427,13 +427,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/test/simpledb/AggregateTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="31" column="11" selection-start-line="31" selection-start-column="11" selection-end-line="31" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/simpledb/JoinPredicateTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="96">
@@ -577,13 +570,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/simpledb/Operator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="25" column="23" lean-forward="true" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/java/simpledb/IntField.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="373">
@@ -605,52 +591,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/simpledb/TupleDesc.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="29">
-          <caret line="10" column="7" lean-forward="true" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/simpledb/TestUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="130" column="11" selection-start-line="130" selection-start-column="11" selection-end-line="130" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/simpledb/Aggregator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/simpledb/IntegerAggregatorTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1221">
-          <caret line="76" selection-start-line="76" selection-end-line="76" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/java/simpledb/Type.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/simpledb/IntegerAggregator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="72" column="5" lean-forward="true" selection-start-line="72" selection-start-column="5" selection-end-line="72" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/simpledb/DbIterator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="34" column="15" selection-start-line="34" selection-start-column="15" selection-end-line="34" selection-end-column="15" />
         </state>
       </provider>
     </entry>
@@ -661,9 +605,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/test/simpledb/StringAggregatorTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="51" selection-start-line="51" selection-end-line="51" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/java/simpledb/StringAggregator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="840">
+        <state relative-caret-position="786">
           <caret line="35" column="30" selection-start-line="35" selection-start-column="30" selection-end-line="35" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -671,22 +622,96 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/simpledb/StringAggregatorTest.java">
+    <entry file="file://$PROJECT_DIR$/test/simpledb/IntegerAggregatorTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-92">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        <state relative-caret-position="518">
+          <caret line="76" selection-start-line="76" selection-end-line="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/simpledb/NoGroupAggregator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-608">
+          <caret line="31" column="4" selection-start-line="31" selection-start-column="4" selection-end-line="31" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/simpledb/Aggregator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1215">
+          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/simpledb/TupleDesc.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1171">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/simpledb/Operator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="13" column="19" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/simpledb/TestUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="137" column="23" lean-forward="true" selection-start-line="137" selection-start-column="23" selection-end-line="137" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/simpledb/DbIterator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24">
+          <caret line="24" column="17" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/simpledb/IntegerAggregator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1176">
+          <caret line="49" column="43" lean-forward="true" selection-start-line="49" selection-start-column="43" selection-end-line="49" selection-end-column="43" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/java/simpledb/AggregatorIterator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="108" column="47" selection-start-line="108" selection-start-column="47" selection-end-line="108" selection-end-column="47" />
+        <state relative-caret-position="328">
+          <caret line="131" column="10" selection-start-line="131" selection-start-column="10" selection-end-line="131" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/simpledb/AggregatorIteratorNoGroup.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="311">
+          <caret line="56" column="10" selection-start-line="56" selection-start-column="10" selection-end-line="56" selection-end-column="10" />
           <folding>
-            <element signature="e#4357#4358#0" expanded="true" />
-            <element signature="e#4384#4385#0" expanded="true" />
-            <element signature="e#4410#4411#0" expanded="true" />
-            <element signature="e#4440#4441#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/simpledb/AggregateTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="109">
+          <caret line="88" column="28" lean-forward="true" selection-start-line="88" selection-start-column="28" selection-end-line="88" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/simpledb/Aggregate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="190" column="20" selection-start-line="190" selection-start-column="20" selection-end-line="190" selection-end-column="20" />
+          <folding>
+            <element signature="e#2717#2718#0" expanded="true" />
+            <element signature="e#2751#2752#0" expanded="true" />
           </folding>
         </state>
       </provider>

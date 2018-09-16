@@ -11,6 +11,7 @@ public class AggregatorIterator implements DbIterator {
     private int gbfield;
     private Type gbfieldtype;
     private int afield;
+
     private Type aggType;
 
     public AggregatorIterator(Aggregator.Op what, Map<Field, List<Tuple>> map,
@@ -22,6 +23,12 @@ public class AggregatorIterator implements DbIterator {
         this.gbfieldtype = gbfieldtype;
         this.afield = afield;
         this.aggType = aggType;
+        //System.out.println("map size: "+map.size());
+
+
+        Type typeArr[] = new Type[]{gbfieldtype, Type.INT_TYPE};
+        String fieldArr[] = new String[]{"GfroupBy", "Aggregate"};
+        tdes = new TupleDesc(typeArr, fieldArr);
     }
     public void open()
             throws DbException, TransactionAbortedException{
@@ -30,10 +37,12 @@ public class AggregatorIterator implements DbIterator {
     }
     public boolean hasNext() throws DbException, TransactionAbortedException{
         if(isOpen == false) throw new IllegalStateException();
+        //System.out.println("Here in hasNext");
         return iter.hasNext();
     }
 
     public Tuple next() throws DbException, TransactionAbortedException, NoSuchElementException {
+        //System.out.println("Here in next");
         if(hasNext() == false) throw new NoSuchElementException();
         if(isOpen == false) throw new IllegalStateException();
 
@@ -120,6 +129,7 @@ public class AggregatorIterator implements DbIterator {
     }
 
     public TupleDesc getTupleDesc(){
+        //System.out.println("Here?");
         return tdes;
     }
 
