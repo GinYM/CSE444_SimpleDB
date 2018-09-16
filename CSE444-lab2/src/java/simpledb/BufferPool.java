@@ -29,6 +29,7 @@ public class BufferPool {
     public static final int DEFAULT_PAGES = 50;
 
     private Map<PageId, Page> pools;
+    private Queue<PageId> queue;
 
 
     /**
@@ -40,6 +41,7 @@ public class BufferPool {
         // some code goes here
         this.numPages = numPages;
         pools = new HashMap<>();
+        queue=new LinkedList<>();
     }
     
     public static int getPageSize() {
@@ -73,12 +75,16 @@ public class BufferPool {
         //System.out.println("Gere");
         if(pools.containsKey(pid)) return pools.get(pid);
 
-        if(pools.size()>=numPages) throw new DbException("No enough space");
+        if(pools.size()>=numPages){
+            evictPage();
+            //throw new DbException("No enough space");
+        }
 
         //System.out.println(pid.getTableId());
         DbFile dbFile = Database.getCatalog().getDatabaseFile(pid.getTableId());
         Page pg = dbFile.readPage(pid);
         pools.put(pid, pg);
+        queue.offer(pid);
         return pg;
     }
 
@@ -148,6 +154,9 @@ public class BufferPool {
         ArrayList<Page> ret =  df.insertTuple(tid, t);
         for(Page pg : ret){
             pg.markDirty(true, tid);
+            if(!pools.containsKey(pg.getId())){
+                queue.offer(pg.getId());
+            }
             pools.put(pg.getId(), pg);
         }
     }
@@ -185,7 +194,9 @@ public class BufferPool {
     public synchronized void flushAllPages() throws IOException {
         // some code goes here
         // not necessary for lab1
-
+        for(PageId pid : pools.keySet()){
+            flushPage(pid);
+        }
     }
 
     /** Remove the specific page id from the buffer pool.
@@ -205,6 +216,12 @@ public class BufferPool {
     private synchronized  void flushPage(PageId pid) throws IOException {
         // some code goes here
         // not necessary for lab1
+        Page pg = pools.get(pid);
+        if(pg.isDirty() == null) return;
+        pg.markDirty(false,new TransactionId());
+        DbFile df = Database.getCatalog().getDatabaseFile(pid.getTableId());
+        df.writePage(pg);
+
     }
 
     /** Write all pages of the specified transaction to disk.
@@ -221,6 +238,16 @@ public class BufferPool {
     private synchronized  void evictPage() throws DbException {
         // some code goes here
         // not necessary for lab1
+        PageId pid = queue.poll();
+        pools.get(pid).markDirty(true, new TransactionId());
+        try{
+            flushPage(pid);
+            pools.remove(pid);
+        }catch(IOException e){
+
+        }
+
+
     }
 
 }
