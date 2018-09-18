@@ -27,10 +27,12 @@ public class HeapFile implements DbFile {
     private TupleDesc td;
     private static Map<Integer, Integer> file2id = new HashMap<>(); //file to uid
     private static int uid=0;
+    private int countPgNum;
     public HeapFile(File f, TupleDesc td) {
         // some code goes here
         this.f = f;
         this.td = td;
+        countPgNum = (int)Math.ceil(1.0*f.length()/BufferPool.getPageSize());
         //file2id = new HashMap<>();
 
         if(file2id.containsKey(f.getAbsoluteFile().hashCode()) ==false){
@@ -116,8 +118,7 @@ public class HeapFile implements DbFile {
      */
     public int numPages() {
         // some code goes here
-        int len = (int)f.length();
-        return (int)Math.ceil(1.0*len/BufferPool.getPageSize());
+        return countPgNum;
     }
 
     // see DbFile.java for javadocs
@@ -137,7 +138,7 @@ public class HeapFile implements DbFile {
                 //System.out.println(i+ " "+page.getNumEmptySlots());
                 page.insertTuple(t);
                 result.add(page);
-                writePage(page);
+                //writePage(page);
                 Database.getBufferPool().releasePage(tid, page.getId());
                 //Database.getLockManager().Unlock(page.getId(), tid);
                 break;
@@ -155,9 +156,11 @@ public class HeapFile implements DbFile {
             page = new HeapPage(new HeapPageId(getId(), numPages()),data);
             t.setRecordId(new RecordId(new HeapPageId(getId(), numPages()),0));
             page.insertTuple(t);
-            writePage(page);
+            //writePage(page);
             //System.out.println(page.getNumEmptySlots()+" "+numPages());
             result.add(page);
+            //page.markDirty(true, tid);
+            countPgNum++;
         }
 
 
@@ -181,8 +184,8 @@ public class HeapFile implements DbFile {
             try{
                 page.deleteTuple(t);
                 ret.add(page);
-                writePage(page);
-            }catch(DbException | IOException e){
+                //writePage(page);
+            }catch(DbException  e){
                 //Database.getBufferPool().releasePage(tid, page.getId());
             }
             //Database.getBufferPool().

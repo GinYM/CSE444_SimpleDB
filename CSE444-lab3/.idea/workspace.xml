@@ -2,8 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c5189d5d-9367-4999-a864-59ea0b400748" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log" beforeDir="false" afterPath="$PROJECT_DIR$/log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE444-lab3/simpledb/BufferPool.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSE444-lab3/simpledb/BufferPool.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE444-lab3/simpledb/HeapFile$myIter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSE444-lab3/simpledb/HeapFile$myIter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE444-lab3/simpledb/HeapFile.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSE444-lab3/simpledb/HeapFile.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/java/simpledb/BufferPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java/simpledb/BufferPool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/java/simpledb/HeapFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java/simpledb/HeapFile.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,81 +29,31 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="class" value="16" />
-          <entry key="java" value="36" />
+          <entry key="java" value="43" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="16" />
-          <entry key="JAVA" value="36" />
+          <entry key="JAVA" value="43" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="class" value="12" />
-          <entry key="java" value="8317" />
+          <entry key="java" value="8519" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CLASS" value="12" />
-          <entry key="JAVA" value="8317" />
+          <entry key="JAVA" value="8519" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/simpledb/LockingTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="169">
-              <caret line="175" selection-start-line="175" selection-end-line="175" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/java/simpledb/LockManager.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="197">
-              <caret line="249" selection-start-line="249" selection-end-line="249" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#5971#5972#0" expanded="true" />
-                <element signature="e#6034#6035#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/java/simpledb/Insert.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1602">
-              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/java/simpledb/HeapPage.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-5">
-              <caret line="285" column="9" lean-forward="true" selection-start-line="285" selection-start-column="9" selection-end-line="285" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/java/simpledb/Query.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="438">
-              <caret line="111" column="36" lean-forward="true" selection-start-line="111" selection-start-column="36" selection-end-line="111" selection-end-column="36" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/java/simpledb/SimpleDb.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -120,17 +75,26 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/java/simpledb/BufferPool.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="162" column="33" selection-start-line="162" selection-start-column="33" selection-end-line="162" selection-end-column="33" />
+            <state relative-caret-position="159">
+              <caret line="279" column="53" selection-start-line="279" selection-start-column="53" selection-end-line="279" selection-end-column="53" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/simpledb/TransactionTest.java">
+        <entry file="file://$PROJECT_DIR$/test/simpledb/systemtest/AbortEvictionTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="111" selection-start-line="111" selection-end-line="111" />
+            <state relative-caret-position="85">
+              <caret line="24" column="28" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/simpledb/systemtest/EvictionTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="42" column="23" selection-start-line="42" selection-start-column="23" selection-end-line="42" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -138,8 +102,35 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/java/simpledb/HeapFile.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="259" column="35" lean-forward="true" selection-start-line="259" selection-start-column="35" selection-end-line="259" selection-end-column="35" />
+            <state relative-caret-position="94">
+              <caret line="160" column="23" lean-forward="true" selection-start-line="160" selection-start-column="23" selection-end-line="160" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/java/simpledb/HeapPage.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="56">
+              <caret line="274" column="16" selection-start-line="274" selection-start-column="16" selection-end-line="274" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/java/simpledb/Transaction.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="169">
+              <caret line="56" selection-start-line="56" selection-end-line="56" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/java/simpledb/LogFile.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="82">
+              <caret line="301" column="30" selection-start-line="301" selection-start-column="30" selection-end-line="301" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -168,6 +159,8 @@
       <find>After</find>
       <find>Acquire</find>
       <find>Here</find>
+      <find>flushPage</find>
+      <find>tid2pid</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -180,8 +173,8 @@
         <option value="$PROJECT_DIR$/src/java/simpledb/Database.java" />
         <option value="$PROJECT_DIR$/test/simpledb/TestUtil.java" />
         <option value="$PROJECT_DIR$/test/simpledb/LockingTest.java" />
-        <option value="$PROJECT_DIR$/src/java/simpledb/HeapFile.java" />
         <option value="$PROJECT_DIR$/src/java/simpledb/LockManager.java" />
+        <option value="$PROJECT_DIR$/src/java/simpledb/HeapFile.java" />
         <option value="$PROJECT_DIR$/src/java/simpledb/BufferPool.java" />
       </list>
     </option>
@@ -240,6 +233,13 @@
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="simpledb" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="CSE444-lab3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CSE444-lab3" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="simpledb" type="462c0819:PsiDirectoryNode" />
+              <item name="systemtest" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -249,7 +249,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1537250951039" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1537252765976" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -263,7 +263,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.AbortEvictionTest">
+  <component name="RunManager" selected="JUnit.TransactionTest">
     <configuration name="AbortEvictionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CSE444-lab31" />
       <extension name="coverage">
@@ -278,6 +278,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="AbortEvictionTest.testDoNotEvictDirtyPages" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CSE444-lab31" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="simpledb.systemtest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="simpledb.systemtest" />
+      <option name="MAIN_CLASS_NAME" value="simpledb.systemtest.AbortEvictionTest" />
+      <option name="METHOD_NAME" value="testDoNotEvictDirtyPages" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="LockingTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CSE444-lab31" />
       <extension name="coverage">
@@ -288,22 +304,6 @@
       </extension>
       <option name="PACKAGE_NAME" value="simpledb" />
       <option name="MAIN_CLASS_NAME" value="simpledb.LockingTest" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LockingTest.lockUpgrade" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CSE444-lab31" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="simpledb.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="simpledb" />
-      <option name="MAIN_CLASS_NAME" value="simpledb.LockingTest" />
-      <option name="METHOD_NAME" value="lockUpgrade" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -340,18 +340,18 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.LockingTest" />
-      <item itemvalue="JUnit.LockingTest.lockUpgrade" />
       <item itemvalue="JUnit.TransactionTest" />
       <item itemvalue="JUnit.AbortEvictionTest" />
       <item itemvalue="JUnit.TransactionTest.abortTransaction" />
+      <item itemvalue="JUnit.AbortEvictionTest.testDoNotEvictDirtyPages" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.AbortEvictionTest" />
         <item itemvalue="JUnit.TransactionTest" />
+        <item itemvalue="JUnit.AbortEvictionTest" />
+        <item itemvalue="JUnit.AbortEvictionTest.testDoNotEvictDirtyPages" />
         <item itemvalue="JUnit.TransactionTest.abortTransaction" />
         <item itemvalue="JUnit.LockingTest" />
-        <item itemvalue="JUnit.LockingTest.lockUpgrade" />
       </list>
     </recent_temporary>
   </component>
@@ -369,27 +369,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="LockingTest - 2018.09.17 at 21h 33m 56s.xml">
-      <configuration name="LockingTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="LockingTest - 2018.09.17 at 21h 34m 21s.xml">
-      <configuration name="LockingTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="LockingTest - 2018.09.17 at 21h 34m 40s.xml">
-      <configuration name="LockingTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TransactionTest - 2018.09.17 at 22h 59m 32s.xml">
-      <configuration name="TransactionTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="AbortEvictionTest - 2018.09.17 at 22h 59m 48s.xml">
-      <configuration name="AbortEvictionTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TransactionTest - 2018.09.17 at 23h 00m 08s.xml">
-      <configuration name="TransactionTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TransactionTest - 2018.09.17 at 23h 00m 36s.xml">
-      <configuration name="TransactionTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="TransactionTest - 2018.09.17 at 23h 05m 39s.xml">
       <configuration name="TransactionTest" configurationId="JUnit" />
     </history-entry>
@@ -398,6 +377,27 @@
     </history-entry>
     <history-entry file="TransactionTest_abortTransaction - 2018.09.17 at 23h 07m 40s.xml">
       <configuration name="TransactionTest.abortTransaction" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TransactionTest_abortTransaction - 2018.09.17 at 23h 08m 52s.xml">
+      <configuration name="TransactionTest.abortTransaction" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TransactionTest - 2018.09.17 at 23h 08m 55s.xml">
+      <configuration name="TransactionTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AbortEvictionTest - 2018.09.17 at 23h 09m 11s.xml">
+      <configuration name="AbortEvictionTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AbortEvictionTest_testDoNotEvictDirtyPages - 2018.09.17 at 23h 26m 05s.xml">
+      <configuration name="AbortEvictionTest.testDoNotEvictDirtyPages" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AbortEvictionTest_testDoNotEvictDirtyPages - 2018.09.17 at 23h 27m 13s.xml">
+      <configuration name="AbortEvictionTest.testDoNotEvictDirtyPages" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AbortEvictionTest_testDoNotEvictDirtyPages - 2018.09.17 at 23h 33m 09s.xml">
+      <configuration name="AbortEvictionTest.testDoNotEvictDirtyPages" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AbortEvictionTest_testDoNotEvictDirtyPages - 2018.09.17 at 23h 34m 53s.xml">
+      <configuration name="AbortEvictionTest.testDoNotEvictDirtyPages" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TodoView">
@@ -411,6 +411,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2532189" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -579,24 +580,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/simpledb/HeapFile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="259" column="35" lean-forward="true" selection-start-line="259" selection-start-column="35" selection-end-line="259" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/java/simpledb/Insert.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1602">
           <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/simpledb/HeapPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5">
-          <caret line="285" column="9" lean-forward="true" selection-start-line="285" selection-start-column="9" selection-end-line="285" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -654,10 +641,59 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/simpledb/LogFile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="82">
+          <caret line="301" column="30" selection-start-line="301" selection-start-column="30" selection-end-line="301" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/simpledb/DbFile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="42" column="27" selection-start-line="42" selection-start-column="27" selection-end-line="42" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/simpledb/HeapPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="56">
+          <caret line="274" column="16" selection-start-line="274" selection-start-column="16" selection-end-line="274" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/simpledb/systemtest/EvictionTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="42" column="23" selection-start-line="42" selection-start-column="23" selection-end-line="42" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/simpledb/systemtest/AbortEvictionTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="24" column="28" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/simpledb/HeapFile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="94">
+          <caret line="160" column="23" lean-forward="true" selection-start-line="160" selection-start-column="23" selection-end-line="160" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/simpledb/Transaction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="56" selection-start-line="56" selection-end-line="56" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/java/simpledb/BufferPool.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="162" column="33" selection-start-line="162" selection-start-column="33" selection-end-line="162" selection-end-column="33" />
+        <state relative-caret-position="159">
+          <caret line="279" column="53" selection-start-line="279" selection-start-column="53" selection-end-line="279" selection-end-column="53" />
         </state>
       </provider>
     </entry>

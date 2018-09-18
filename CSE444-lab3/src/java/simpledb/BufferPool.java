@@ -262,7 +262,9 @@ public class BufferPool {
     private synchronized  void flushPage(PageId pid) throws IOException {
         // some code goes here
         // not necessary for lab1
+        if(pools.containsKey(pid) == false) return;
         Page pg = pools.get(pid);
+        //System.out.println(pg);
         if(pg.isDirty() == null) return;
         pg.markDirty(false,new TransactionId());
         DbFile df = Database.getCatalog().getDatabaseFile(pid.getTableId());
@@ -275,6 +277,7 @@ public class BufferPool {
     public synchronized  void flushPages(TransactionId tid) throws IOException {
         // some code goes here
         // not necessary for lab1|lab2
+        if(tid2pid.containsKey(tid) == false) return;
         for(PageId pid : tid2pid.get(tid)){
             flushPage(pid);
             Database.getBufferPool().releasePage(tid, pid);
@@ -292,7 +295,7 @@ public class BufferPool {
         boolean isSuc = false;
         while(queue.isEmpty() == false){
             PageId pid = queue.poll();
-            if(pools.get(pid).isDirty() == null){
+            if(pools.containsKey(pid) && pools.get(pid).isDirty() == null){
                 try{
                     flushPage(pid);
                     pools.remove(pid);
