@@ -21,6 +21,7 @@ public class BufferPool {
     public static final int PAGE_SIZE = 4096;
     private int numPages;
     private static int pageSize = PAGE_SIZE;
+    private Map<TransactionId, List<PageId>> tid2pid;
 
     
     /** Default number of pages passed to the constructor. This is used by
@@ -49,6 +50,7 @@ public class BufferPool {
         pools = new HashMap<>();
         queue=new LinkedList<>();
         lm = new LockManager();
+        tid2pid = new HashMap<>();
         //System.out.println("Here");
         //System.out.println(lm.getHold().size());
     }
@@ -84,7 +86,14 @@ public class BufferPool {
         //System.out.println("Gere");
         //System.out.println(perm);
         lm.Lock(pid, perm, tid);
-        if(pools.containsKey(pid)) return pools.get(pid);
+        if(tid2pid.containsKey(tid) == false){
+            tid2pid.put(tid, new ArrayList<>());
+        }
+        tid2pid.get(tid).add(pid);
+        if(pools.containsKey(pid)){
+
+            return pools.get(pid);
+        }
 
         if(pools.size()>=numPages){
             evictPage();
@@ -98,6 +107,7 @@ public class BufferPool {
         queue.offer(pid);
         //LockManager.Unlock(pid, perm);
         Database.getBufferPool().getLM().getHoldCount(pid, tid);
+        //tid2pid.get(tid).add(pg);
         return pg;
     }
 
@@ -124,6 +134,7 @@ public class BufferPool {
     public void transactionComplete(TransactionId tid) throws IOException {
         // some code goes here
         // not necessary for lab1|lab2
+        transactionComplete(tid, true);
     }
 
     /** Return true if the specified transaction has a lock on the specified page */
@@ -144,6 +155,23 @@ public class BufferPool {
         throws IOException {
         // some code goes here
         // not necessary for lab1|lab2
+        if(commit == true){
+            flushPages(tid);
+        }else{
+            List<PageId> pids = tid2pid.get(tid);
+            tid2pid.remove(tid);
+            for(PageId pid : pids){
+                pools.remove(pid);
+                try{
+                    Database.getBufferPool().getPage(tid,pid,Permissions.READ_ONLY);
+                }catch(TransactionAbortedException|DbException e){
+                    e.printStackTrace();
+                }
+                Database.getBufferPool().releasePage(tid, pid);
+
+            }
+            tid2pid.remove(tid);
+        }
     }
 
     /**
@@ -169,9 +197,9 @@ public class BufferPool {
         for(Page pg : ret){
             //Database.getBufferPool().releasePage(tid, pg.getId());
             pg.markDirty(true, tid);
-            if(!pools.containsKey(pg.getId())){
+            //if(!pools.containsKey(pg.getId())){
                 queue.offer(pg.getId());
-            }
+            //}
             pools.put(pg.getId(), pg);
         }
     }
@@ -247,6 +275,11 @@ public class BufferPool {
     public synchronized  void flushPages(TransactionId tid) throws IOException {
         // some code goes here
         // not necessary for lab1|lab2
+        for(PageId pid : tid2pid.get(tid)){
+            flushPage(pid);
+            Database.getBufferPool().releasePage(tid, pid);
+        }
+        tid2pid.remove(tid);
     }
 
     /**
@@ -256,6 +289,24 @@ public class BufferPool {
     private synchronized  void evictPage() throws DbException {
         // some code goes here
         // not necessary for lab1
+        boolean isSuc = false;
+        while(queue.isEmpty() == false){
+            PageId pid = queue.poll();
+            if(pools.get(pid).isDirty() == null){
+                try{
+                    flushPage(pid);
+                    pools.remove(pid);
+                    isSuc = true;
+                    break;
+                }catch(IOException e){
+                    e.printStackTrace();
+                }
+            }
+        }
+        if(isSuc == false){
+            throw new DbException("All dirty!");
+        }
+        /*
         PageId pid = queue.poll();
         pools.get(pid).markDirty(true, new TransactionId());
         try{
@@ -264,6 +315,7 @@ public class BufferPool {
         }catch(IOException e){
 
         }
+        */
 
 
     }
