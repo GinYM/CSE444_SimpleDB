@@ -298,7 +298,7 @@ public class BufferPool {
         boolean isSuc = false;
         while(queue.isEmpty() == false){
             PageId pid = queue.poll();
-            if(pools.containsKey(pid) && pools.get(pid).isDirty() == null){
+            if(pools.containsKey(pid) && pools.get(pid).isDirty() == null && lm.IsLock(pid) == false){
                 try{
                     flushPage(pid);
                     pools.remove(pid);
@@ -312,16 +312,7 @@ public class BufferPool {
         if(isSuc == false){
             throw new DbException("All dirty!");
         }
-        /*
-        PageId pid = queue.poll();
-        pools.get(pid).markDirty(true, new TransactionId());
-        try{
-            flushPage(pid);
-            pools.remove(pid);
-        }catch(IOException e){
 
-        }
-        */
 
 
     }

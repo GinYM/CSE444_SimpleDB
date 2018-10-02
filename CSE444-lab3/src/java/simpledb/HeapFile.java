@@ -224,7 +224,7 @@ public class HeapFile implements DbFile {
         }
         public void open()throws TransactionAbortedException, DbException{
             isClosed = false;
-            System.out.println("Open the file!!!");
+            //System.out.println("Open the file!!!");
             curPg = Database.getBufferPool().getPage(tid,
                     new HeapPageId(tableId, pgNumber), Permissions.READ_ONLY);
             //System.out.println("Here "+curPg.hashCode());
