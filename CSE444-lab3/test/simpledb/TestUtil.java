@@ -335,8 +335,7 @@ public class TestUtil {
         public void run() {
             try {
                 //System.out.println("Here");
-                //System.out.println(Database.getBufferPool().getLM().getHold().size());
-                Database.getBufferPool().getLM().getHoldCount(pid, tid);
+                //System.out.println(Database.getBufferPool().getLM().getHold().size())
                 Database.getBufferPool().getPage(tid, pid, perm);
                 synchronized(alock) {
                     acquired = true;

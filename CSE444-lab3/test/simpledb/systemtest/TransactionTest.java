@@ -95,6 +95,7 @@ public class TransactionTest extends SimpleDbTestBase {
 
                         // read the value out of the table
                         Query q1 = new Query(ss1, tr.getId());
+                        //System.out.println(tr.getId().hashCode());
                         q1.start();
                         Tuple tup = q1.next();
                         IntField intf = (IntField) tup.getField(0);
@@ -109,6 +110,7 @@ public class TransactionTest extends SimpleDbTestBase {
                         Thread.sleep(1);
 
                         // race the other threads to finish the transaction: one will win
+                        System.out.println("q1 closed");
                         q1.close();
 
                         // delete old values (i.e., just one row) from table
@@ -116,9 +118,14 @@ public class TransactionTest extends SimpleDbTestBase {
 
                         Query q2 = new Query(delOp, tr.getId());
 
+                        //System.out.println(tr.getId().hashCode());
+
                         q2.start();
+                        System.out.println("Before q2 "+tr.getId().hashCode());
                         q2.next();
+                        System.out.println("After q2 "+tr.getId().hashCode());
                         q2.close();
+                        System.out.println("End of q2 "+tr.getId().hashCode());
 
                         // set up a Set with a tuple that is one higher than the old one.
                         HashSet<Tuple> hs = new HashSet<Tuple>();

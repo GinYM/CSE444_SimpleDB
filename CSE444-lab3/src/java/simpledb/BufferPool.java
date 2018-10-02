@@ -85,7 +85,10 @@ public class BufferPool {
         //Page page = DbFile.readPage(pid);
         //System.out.println("Gere");
         //System.out.println(perm);
-        lm.Lock(pid, perm, tid);
+        LockManager.LockType lockType = perm == Permissions.READ_ONLY?
+                LockManager.LockType.Shared: LockManager.LockType.Mutex;
+
+        lm.Lock(pid, lockType, tid);
         if(tid2pid.containsKey(tid) == false){
             tid2pid.put(tid, new ArrayList<>());
         }
@@ -106,7 +109,7 @@ public class BufferPool {
         pools.put(pid, pg);
         queue.offer(pid);
         //LockManager.Unlock(pid, perm);
-        Database.getBufferPool().getLM().getHoldCount(pid, tid);
+        //Database.getBufferPool().getLM().getHoldCount(pid, tid);
         //tid2pid.get(tid).add(pg);
         return pg;
     }
@@ -241,7 +244,7 @@ public class BufferPool {
         for(PageId pid : pools.keySet()){
             flushPage(pid);
             //System.out.println("Here");
-            lm.UnlockPage(pid);
+            //lm.UnlockPage(pid);
         }
     }
 

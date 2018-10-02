@@ -73,14 +73,9 @@ public class LockingTest extends TestUtil.CreateHeapFile {
       TransactionId tid2, PageId pid2, Permissions perm2,
       boolean expected) throws Exception {
 
-    //System.out.println(perm1+" "+perm2);
+
     bp.getPage(tid1, pid1, perm1);
-    //System.out.println(Database.getBufferPool().getLM().getHold().size());
-    //System.out.println("After");
-    //Database.getBufferPool().getLM().Lock(pid1, Permissions.READ_ONLY,tid1);
-    //Database.getBufferPool().getLM().Lock(pid1, Permissions.READ_ONLY,tid1);
-    //System.out.println("Here after lock");
-    //Database.getBufferPool().getLM().getHoldCount(pid1, tid1);
+
     grabLock(tid2, pid2, perm2, expected);
   }
 
@@ -98,11 +93,11 @@ public class LockingTest extends TestUtil.CreateHeapFile {
       boolean expected) throws Exception {
     //Database.getLockManager().getHoldCount(pid, tid);
     //System.out.println(Database.getBufferPool().getLM().getHold().size());
-    Database.getBufferPool().getLM().getHoldCount(pid, tid);
+
     TestUtil.LockGrabber t = new TestUtil.LockGrabber(tid, pid, perm);
     t.start();
     //System.out.println("After start");
-    Database.getBufferPool().getLM().getHoldCount(pid, tid);
+
 
     // if we don't have the lock after TIMEOUT, we assume blocking.
     Thread.sleep(TIMEOUT);
