@@ -129,6 +129,12 @@ public class BufferPool {
         lm.Unlock(pid, tid);
     }
 
+    public  void releasePageAll(TransactionId tid, PageId pid) {
+        // some code goes here
+        // not necessary for lab1|lab2
+        lm.UnlockAllPid(pid, tid);
+    }
+
     /**
      * Release all locks associated with a given transaction.
      *
@@ -165,12 +171,13 @@ public class BufferPool {
             tid2pid.remove(tid);
             for(PageId pid : pids){
                 pools.remove(pid);
-                try{
+                /*try{
                     Database.getBufferPool().getPage(tid,pid,Permissions.READ_ONLY);
                 }catch(TransactionAbortedException|DbException e){
                     e.printStackTrace();
                 }
-                Database.getBufferPool().releasePage(tid, pid);
+                */
+                Database.getBufferPool().releasePageAll(tid, pid);
 
             }
             tid2pid.remove(tid);
@@ -241,10 +248,12 @@ public class BufferPool {
     public synchronized void flushAllPages() throws IOException {
         // some code goes here
         // not necessary for lab1
+
         for(PageId pid : pools.keySet()){
             flushPage(pid);
             //System.out.println("Here");
-            //lm.UnlockPage(pid);
+
+            lm.UnlockPage(pid);
         }
     }
 

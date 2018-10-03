@@ -45,6 +45,7 @@ public class TransactionTest extends SimpleDbTestBase {
             try {
                 tester.join(timeout);
             } catch (InterruptedException e) {
+                System.out.println("Dead Lock!");
                 throw new RuntimeException(e);
             }
             if (tester.isAlive()) {
@@ -110,7 +111,7 @@ public class TransactionTest extends SimpleDbTestBase {
                         Thread.sleep(1);
 
                         // race the other threads to finish the transaction: one will win
-                        System.out.println("q1 closed");
+                        //System.out.println("q1 closed");
                         q1.close();
 
                         // delete old values (i.e., just one row) from table
@@ -121,11 +122,11 @@ public class TransactionTest extends SimpleDbTestBase {
                         //System.out.println(tr.getId().hashCode());
 
                         q2.start();
-                        System.out.println("Before q2 "+tr.getId().hashCode());
+                        //System.out.println("Before q2 "+tr.getId().hashCode());
                         q2.next();
-                        System.out.println("After q2 "+tr.getId().hashCode());
+                        //System.out.println("After q2 "+tr.getId().hashCode());
                         q2.close();
-                        System.out.println("End of q2 "+tr.getId().hashCode());
+                        //System.out.println("End of q2 "+tr.getId().hashCode());
 
                         // set up a Set with a tuple that is one higher than the old one.
                         HashSet<Tuple> hs = new HashSet<Tuple>();

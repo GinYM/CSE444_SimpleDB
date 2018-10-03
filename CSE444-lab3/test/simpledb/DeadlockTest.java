@@ -84,10 +84,18 @@ public class DeadlockTest extends TestUtil.CreateHeapFile {
     LockGrabber lg1Write = startGrabber(tid1, p1, Permissions.READ_WRITE);
     LockGrabber lg2Write = startGrabber(tid2, p0, Permissions.READ_WRITE);
 
+    System.out.println("After lg");
+
     while (true) {
+      System.out.println("Here");
       Thread.sleep(POLL_INTERVAL);
 
+      System.out.println(lg1Write.acquired()+" "+lg2Write.acquired());
+
       assertFalse(lg1Write.acquired() && lg2Write.acquired());
+
+      //System.out.println("After assert");
+
       if (lg1Write.acquired() && !lg2Write.acquired()) break;
       if (!lg1Write.acquired() && lg2Write.acquired()) break;
 
@@ -102,6 +110,7 @@ public class DeadlockTest extends TestUtil.CreateHeapFile {
       }
 
       if (lg2Write.getError() != null) {
+        System.out.println("lg2Write Error!");
         lg2Read.stop(); lg2Write.stop();
         bp.transactionComplete(tid2);
         Thread.sleep(rand.nextInt(WAIT_INTERVAL));
@@ -198,6 +207,7 @@ public class DeadlockTest extends TestUtil.CreateHeapFile {
       }
 
       if (lg2Write.getError() != null) {
+        //System.out.println("Here!!!");
         lg2Read.stop(); lg2Write.stop();
         bp.transactionComplete(tid2);
         Thread.sleep(rand.nextInt(WAIT_INTERVAL));
